@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,9 +19,23 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
+				sans: ['Poppins', 'system-ui', 'sans-serif'],
 			},
 			colors: {
+				// App-specific colors
+				'red-flag': '#FF3B30',
+				'green-flag': '#32D74B',
+				'off-white': '#FAFAFA',
+				'charcoal': '#121212',
+				'almost-black': '#1C1C1E',
+				'medium-gray': '#6E6E73',
+				'electric-purple': '#8E44AD',
+				'soft-gray': '#E1E1E6',
+				'purple-hover': '#6E2F8B',
+				'surprise-purple': '#C39BD3',
+				'surprise-hover': '#9B59B6',
+				
+				// Keep existing shadcn colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -67,6 +80,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontSize: {
+				'app-title': ['2.5rem', { lineHeight: '1.2', fontWeight: '700' }],
+				'app-subtitle': ['1.2rem', { lineHeight: '1.4', fontWeight: '500' }],
+				'app-result': ['1.5rem', { lineHeight: '1.4', fontWeight: '600' }],
+				'app-body': ['1rem', { lineHeight: '1.4', fontWeight: '400' }],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -108,13 +127,49 @@ export default {
 						transform: 'scale(1)',
 						opacity: '1'
 					}
+				},
+				'bounce-in': {
+					'0%': {
+						transform: 'scale(0.3)',
+						opacity: '0'
+					},
+					'50%': {
+						transform: 'scale(1.05)',
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'slide-in-right': {
+					'0%': {
+						transform: 'translateX(100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
+				},
+				'typing': {
+					'0%': { width: '0' },
+					'100%': { width: '100%' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 5px #8E44AD' },
+					'50%': { boxShadow: '0 0 20px #8E44AD, 0 0 30px #8E44AD' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'scale-in': 'scale-in 0.3s ease-out'
+				'scale-in': 'scale-in 0.3s ease-out',
+				'bounce-in': 'bounce-in 0.6s ease-out',
+				'slide-in-right': 'slide-in-right 0.3s ease-out',
+				'typing': 'typing 2s steps(40, end)',
+				'glow': 'glow 2s ease-in-out infinite alternate'
 			}
 		}
 	},

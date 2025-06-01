@@ -8,34 +8,30 @@ interface ResultCardProps {
 
 export const ResultCard = ({ result }: ResultCardProps) => {
   return (
-    <div className={`rounded-3xl shadow-2xl p-6 md:p-8 border-4 transform transition-all duration-500 ${
-      result.isRedFlag 
-        ? 'bg-gradient-to-br from-red-50 to-red-100 border-red-300' 
-        : 'bg-gradient-to-br from-green-50 to-green-100 border-green-300'
-    }`}>
+    <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 border border-soft-gray dark:border-gray-700">
       <div className="text-center space-y-6">
-        {/* Flag Icon */}
-        <div className="text-8xl md:text-9xl animate-scale-in">
+        {/* Flag Icon with bounce animation */}
+        <div className="text-8xl animate-bounce-in">
           {result.isRedFlag ? '🚩' : '🟩'}
         </div>
         
         {/* Verdict */}
-        <div className={`text-3xl md:text-4xl font-black ${
-          result.isRedFlag ? 'text-red-600' : 'text-green-600'
+        <div className={`text-3xl font-bold ${
+          result.isRedFlag ? 'text-red-flag' : 'text-green-flag'
         }`}>
           {result.isRedFlag ? 'RED FLAG!' : 'GREEN FLAG!'}
         </div>
         
         {/* Input Display */}
-        <div className="bg-white/80 rounded-2xl p-4 border-2 border-gray-200">
-          <p className="text-lg md:text-xl font-semibold text-gray-800">
+        <div className="bg-off-white dark:bg-gray-700 rounded-2xl p-4 border border-soft-gray dark:border-gray-600">
+          <p className="text-app-result text-almost-black dark:text-white font-semibold">
             "{result.input}"
           </p>
         </div>
         
-        {/* Savage Explanation */}
-        <div className={`text-lg md:text-xl font-bold leading-relaxed ${
-          result.isRedFlag ? 'text-red-700' : 'text-green-700'
+        {/* Savage Explanation with typing effect styling */}
+        <div className={`text-lg font-medium leading-relaxed italic ${
+          result.isRedFlag ? 'text-red-flag' : 'text-green-flag'
         }`}>
           {result.explanation}
         </div>

@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Share } from 'lucide-react';
+import { instagram, twitter } from 'lucide-react';
 import { TraitResult } from './TraitAnalyzer';
 import { useToast } from '@/hooks/use-toast';
 
@@ -16,13 +16,13 @@ export const ShareButton = ({ result }: ShareButtonProps) => {
   const handleShare = async () => {
     setIsSharing(true);
     
-    const shareText = `🚩 FLAG CHECKER 🟩\n\n"${result.input}"\n\n${result.isRedFlag ? '🚩 RED FLAG!' : '🟩 GREEN FLAG!'}\n\n${result.explanation}\n\nCheck your traits at lovable.dev!`;
+    const shareText = `🚩 Is It a Red Flag? 🟩\n\n"${result.input}"\n\n${result.isRedFlag ? '🚩 RED FLAG!' : '🟩 GREEN FLAG!'}\n\n${result.explanation}\n\nCheck your traits too!`;
     
     try {
       if (navigator.share) {
         // Use native sharing if available (mobile)
         await navigator.share({
-          title: 'Flag Checker Result',
+          title: 'Is It a Red Flag? Result',
           text: shareText,
         });
       } else {
@@ -43,13 +43,40 @@ export const ShareButton = ({ result }: ShareButtonProps) => {
   };
 
   return (
-    <Button
-      onClick={handleShare}
-      disabled={isSharing}
-      className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
-    >
-      <Share className="w-4 h-4 mr-2" />
-      {isSharing ? 'SHARING...' : 'SHARE THE SAVAGE TRUTH'}
-    </Button>
+    <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+      <Button
+        onClick={handleShare}
+        disabled={isSharing}
+        className="bg-electric-purple hover:bg-purple-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100"
+      >
+        {isSharing ? 'Sharing...' : 'Share the Savage Truth'}
+      </Button>
+      
+      <div className="flex gap-2">
+        <Button
+          size="sm"
+          variant="outline"
+          className="border-medium-gray text-medium-gray hover:text-almost-black dark:hover:text-white transition-colors rounded-lg"
+          onClick={() => {
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`🚩 Is It a Red Flag? 🟩\n\n"${result.input}"\n\n${result.isRedFlag ? '🚩 RED FLAG!' : '🟩 GREEN FLAG!'}\n\nCheck your traits too!`)}`;
+            window.open(twitterUrl, '_blank');
+          }}
+        >
+          <twitter className="w-4 h-4" />
+        </Button>
+        
+        <Button
+          size="sm"
+          variant="outline"
+          className="border-medium-gray text-medium-gray hover:text-almost-black dark:hover:text-white transition-colors rounded-lg"
+          onClick={() => {
+            const instagramUrl = 'https://www.instagram.com/';
+            window.open(instagramUrl, '_blank');
+          }}
+        >
+          <instagram className="w-4 h-4" />
+        </Button>
+      </div>
+    </div>
   );
 };

@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { ResultCard } from './ResultCard';
 import { HistoryLog } from './HistoryLog';
 import { analyzeTraits } from '@/utils/traitDatabase';
-import { Shuffle } from 'lucide-react';
+import { dice6 } from 'lucide-react';
 
 export interface TraitResult {
   input: string;
@@ -36,7 +36,7 @@ export const TraitAnalyzer = () => {
       };
       
       setCurrentResult(traitResult);
-      setHistory(prev => [traitResult, ...prev]);
+      setHistory(prev => [traitResult, ...prev.slice(0, 6)]); // Keep only last 7 items
       setInput('');
       setIsAnalyzing(false);
     }, 1500);
@@ -67,37 +67,40 @@ export const TraitAnalyzer = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="space-y-6">
       {/* Input Section */}
-      <div className="bg-white rounded-3xl shadow-xl p-6 md:p-8 border-4 border-gray-100">
+      <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-6 border border-soft-gray dark:border-gray-700">
         <div className="space-y-4">
-          <div className="flex flex-col md:flex-row gap-3">
+          <div className="space-y-3">
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Enter any trait, behavior, or situation..."
-              className="flex-1 text-lg py-6 px-4 rounded-xl border-2 focus:border-purple-400"
+              placeholder="Type a trait, behavior, or situation..."
+              className="text-lg py-6 px-4 rounded-xl border-2 border-soft-gray dark:border-gray-600 bg-white dark:bg-gray-700 text-almost-black dark:text-white placeholder:text-medium-gray focus:border-electric-purple focus:ring-2 focus:ring-electric-purple/20 transition-all duration-200"
               disabled={isAnalyzing}
             />
-            <Button
-              onClick={handleAnalyze}
-              disabled={!input.trim() || isAnalyzing}
-              className="bg-gradient-to-r from-red-500 to-green-500 hover:from-red-600 hover:to-green-600 text-white font-bold py-6 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105"
-            >
-              {isAnalyzing ? "🔍 ANALYZING..." : "🚩 CHECK FLAG 🟩"}
-            </Button>
+            
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button
+                onClick={handleAnalyze}
+                disabled={!input.trim() || isAnalyzing}
+                className="flex-1 bg-electric-purple hover:bg-purple-hover text-white font-semibold py-4 px-6 rounded-xl text-lg transition-all duration-200 transform hover:scale-[1.02] disabled:hover:scale-100 disabled:opacity-50"
+              >
+                {isAnalyzing ? "Checking..." : "Check"}
+              </Button>
+              
+              <Button
+                onClick={handleRandomTrait}
+                variant="outline"
+                className="border-2 border-surprise-purple text-surprise-purple hover:bg-surprise-purple hover:text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-[1.02]"
+                disabled={isAnalyzing}
+              >
+                <dice6 className="w-5 h-5 mr-2" />
+                Surprise Me
+              </Button>
+            </div>
           </div>
-          
-          <Button
-            onClick={handleRandomTrait}
-            variant="outline"
-            className="w-full md:w-auto border-2 border-purple-300 text-purple-600 hover:bg-purple-50 font-semibold py-3 px-6 rounded-xl"
-            disabled={isAnalyzing}
-          >
-            <Shuffle className="w-4 h-4 mr-2" />
-            Random Trait
-          </Button>
         </div>
       </div>
 
@@ -111,7 +114,7 @@ export const TraitAnalyzer = () => {
       {/* History Section */}
       {history.length > 0 && (
         <div className="animate-fade-in">
-          <HistoryLog history={history} />
+          <HistoryLog history={history} onClearHistory={() => setHistory([])} />
         </div>
       )}
     </div>
