@@ -121,7 +121,7 @@ Pull requests are welcome! If you’ve got:
 ## 🔗 Links
 
 - 🌐 [Live Demo](https://flagmedaddy.vercel.app)
-- 🧠 [Trait Dataset](./src/data/traits.json)
+- 🧠 [Trait Dataset](./src/utils/traitDatabase.ts)
 - 💬 [Submit a Trait](https://forms.gle/9WSfMETqjTQP9XKm6)
 - 🧑‍💻 Maintained by [@yourhandle](https://github.com/yourhandle)
 
