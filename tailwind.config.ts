@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -22,11 +23,11 @@ export default {
 				sans: ['Poppins', 'system-ui', 'sans-serif'],
 			},
 			colors: {
-				// App-specific colors
+				// Enhanced Gen-Z colors
 				'red-flag': '#FF3B30',
 				'green-flag': '#32D74B',
 				'off-white': '#FAFAFA',
-				'charcoal': '#121212',
+				'charcoal': '#0F0F0F',
 				'almost-black': '#1C1C1E',
 				'medium-gray': '#6E6E73',
 				'electric-purple': '#8E44AD',
@@ -34,6 +35,10 @@ export default {
 				'purple-hover': '#6E2F8B',
 				'surprise-purple': '#C39BD3',
 				'surprise-hover': '#9B59B6',
+				'neon-pink': '#FF0080',
+				'neon-blue': '#00D4FF',
+				'neon-green': '#00FF88',
+				'neon-yellow': '#FFFF00',
 				
 				// Keep existing shadcn colors
 				border: 'hsl(var(--border))',
@@ -157,8 +162,29 @@ export default {
 					'100%': { width: '100%' }
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: '0 0 5px #8E44AD' },
-					'50%': { boxShadow: '0 0 20px #8E44AD, 0 0 30px #8E44AD' }
+					'0%, 100%': { 
+						boxShadow: '0 0 5px #8E44AD, 0 0 10px #8E44AD, 0 0 15px #8E44AD',
+						borderColor: '#8E44AD'
+					},
+					'50%': { 
+						boxShadow: '0 0 20px #8E44AD, 0 0 30px #8E44AD, 0 0 40px #8E44AD',
+						borderColor: '#C39BD3'
+					}
+				},
+				'rainbow': {
+					'0%': { color: '#FF3B30' },
+					'25%': { color: '#8E44AD' },
+					'50%': { color: '#32D74B' },
+					'75%': { color: '#FF0080' },
+					'100%': { color: '#FF3B30' }
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
@@ -169,7 +195,10 @@ export default {
 				'bounce-in': 'bounce-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.3s ease-out',
 				'typing': 'typing 2s steps(40, end)',
-				'glow': 'glow 2s ease-in-out infinite alternate'
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'rainbow': 'rainbow 3s ease-in-out infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},
