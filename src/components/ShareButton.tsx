@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { instagram, twitter } from 'lucide-react';
+import { Instagram, Twitter } from 'lucide-react';
 import { TraitResult } from './TraitAnalyzer';
 import { useToast } from '@/hooks/use-toast';
 
@@ -62,7 +62,7 @@ export const ShareButton = ({ result }: ShareButtonProps) => {
             window.open(twitterUrl, '_blank');
           }}
         >
-          <twitter className="w-4 h-4" />
+          <Twitter className="w-4 h-4" />
         </Button>
         
         <Button
@@ -74,7 +74,7 @@ export const ShareButton = ({ result }: ShareButtonProps) => {
             window.open(instagramUrl, '_blank');
           }}
         >
-          <instagram className="w-4 h-4" />
+          <Instagram className="w-4 h-4" />
         </Button>
       </div>
     </div>

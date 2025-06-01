@@ -1,6 +1,6 @@
 
 import { TraitResult } from './TraitAnalyzer';
-import { trash } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HistoryLogProps {
@@ -21,7 +21,7 @@ export const HistoryLog = ({ history, onClearHistory }: HistoryLogProps) => {
           size="sm"
           className="text-medium-gray hover:text-almost-black dark:hover:text-white transition-colors"
         >
-          <trash className="w-4 h-4" />
+          <Trash2 className="w-4 h-4" />
         </Button>
       </div>
       

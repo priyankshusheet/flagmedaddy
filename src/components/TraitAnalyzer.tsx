@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { ResultCard } from './ResultCard';
 import { HistoryLog } from './HistoryLog';
 import { analyzeTraits } from '@/utils/traitDatabase';
-import { dice6 } from 'lucide-react';
+import { Dice6 } from 'lucide-react';
 
 export interface TraitResult {
   input: string;
@@ -96,7 +96,7 @@ export const TraitAnalyzer = () => {
                 className="border-2 border-surprise-purple text-surprise-purple hover:bg-surprise-purple hover:text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-[1.02]"
                 disabled={isAnalyzing}
               >
-                <dice6 className="w-5 h-5 mr-2" />
+                <Dice6 className="w-5 h-5 mr-2" />
                 Surprise Me
               </Button>
             </div>
