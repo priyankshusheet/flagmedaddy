@@ -120,7 +120,7 @@ Pull requests are welcome! If you’ve got:
 
 ## 🔗 Links
 
-- 🌐 [Live Demo (Coming Soon)](https://flagmedaddy.vercel.app)
+- 🌐 [Live Demo](https://flagmedaddy.vercel.app)
 - 🧠 [Trait Dataset](./src/data/traits.json)
 - 💬 [Submit a Trait](https://forms.gle/fake-link)
 - 🧑‍💻 Maintained by [@yourhandle](https://github.com/yourhandle)
