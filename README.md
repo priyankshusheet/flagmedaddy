@@ -122,7 +122,7 @@ Pull requests are welcome! If you’ve got:
 
 - 🌐 [Live Demo](https://flagmedaddy.vercel.app)
 - 🧠 [Trait Dataset](./src/data/traits.json)
-- 💬 [Submit a Trait](https://forms.gle/fake-link)
+- 💬 [Submit a Trait](https://forms.gle/9WSfMETqjTQP9XKm6)
 - 🧑‍💻 Maintained by [@yourhandle](https://github.com/yourhandle)
 
 ---
