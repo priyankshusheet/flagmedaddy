@@ -120,11 +120,12 @@ Pull requests are welcome! If you’ve got:
 
 ## 🔗 Links
 
+- 🛠️ Built with caffeine, memes, and emotional damage by [@priyankshusheet](https://www.linkedin.com/in/priyankshusheet)
 - 🌐 [Live Demo](https://flagmedaddy.vercel.app)
 - 🧠 [Trait Dataset](./src/utils/traitDatabase.ts)
 - 💬 [Submit a Trait](https://forms.gle/9WSfMETqjTQP9XKm6)
-- 🧑‍💻 Maintained by [@yourhandle](https://github.com/yourhandle)
-
+- 🧑‍💻 Maintained by [@priyankshusheet](https://github.com/priyankshusheet)
+  
 ---
 
 ## 🧾 License
@@ -132,4 +133,13 @@ Pull requests are welcome! If you’ve got:
 MIT License © 2025 — *Flag Responsibly.*
 
 ---
+
+## 📢 Don't Forget
+
+If this made you laugh, cry, or question your entire personality—  
+Don’t forget to **⭐ star** the repo!
+
+#BuiltByBanter #CodeCringeRepeat #RedOrGreen #DevHumor
+#FlagMeDaddy #FlagCheck #ReactAppWithVibes #BuiltByGenZ
+
 
