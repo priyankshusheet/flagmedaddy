@@ -1,4 +1,3 @@
-
 import { TraitResult } from './TraitAnalyzer';
 import { ShareButton } from './ShareButton';
 
