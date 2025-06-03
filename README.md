@@ -2,6 +2,11 @@
 
 **Flag Me Daddy** is a Gen-Z Red Flag/Green Flag Dating Analyzer – a chaotic, witty, and brutally honest web app that tells you whether a trait is a red flag 🚩 or green flag 🟩… with sass, sarcasm, and savage one-liners.
 
+![Flag Me Daddy-Logo](https://github.com/user-attachments/assets/b8afe08e-15f2-4389-8abe-2f608cbec994)![Flag Me Daddy-Typography](https://github.com/user-attachments/assets/73afc1af-a68d-4dc9-be15-812f1382cbd7)
+
+
+
+
 ---
 
 ## 🎯 What Is This?
