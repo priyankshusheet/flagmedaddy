@@ -1,4 +1,3 @@
-
 import { TraitAnalyzer } from '@/components/TraitAnalyzer';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Moon, Sun } from 'lucide-react';
