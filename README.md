@@ -4,7 +4,7 @@
 
 <p align="left">
   <img src="https://github.com/user-attachments/assets/b8afe08e-15f2-4389-8abe-2f608cbec994" alt="Flag Me Daddy Logo" width="150" style="margin-right: 20px;"/>
-  <img src="https://github.com/user-attachments/assets/73afc1af-a68d-4dc9-be15-812f1382cbd7" alt="Flag Me Daddy Typography" width="250"/>
+  <img src="https://github.com/user-attachments/assets/73afc1af-a68d-4dc9-be15-812f1382cbd7" alt="Flag Me Daddy Typography" width="150"/>
 </p>
 
 
